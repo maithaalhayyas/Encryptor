@@ -7,14 +7,14 @@
 #include "../prod.h"
 
  uint8_t encrypt(uint8_t plaintext,uint8_t key){
-    return (plaintext + key);
+    return (plaintext ^ key);
 }
 
 
 static void simplest_OTP(void **state){
 
-    uint8_t plaintext =0;
-    uint8_t key =0;
+    uint8_t plaintext =1;
+    uint8_t key =1;
     assert_int_equal(0, encrypt(plaintext, key));
 
 
