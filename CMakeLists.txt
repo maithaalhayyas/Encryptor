@@ -1,6 +1,20 @@
-cmake_minimum_required(VERSION 3.17)
-project(Encrypter C)
+cmake_minimum_required(VERSION 3.5)
 
-set(CMAKE_C_STANDARD 99)
+# Set the project name
+project(project)
 
-add_executable(Encrypter main.c)
+# Add an library for the example classes
+add_library(prod_lib
+        prod.c
+        )
+
+
+add_executable(prod
+        main.c
+        )
+target_link_libraries(prod
+        prod_lib
+        )
+
+
+add_subdirectory(tests)
